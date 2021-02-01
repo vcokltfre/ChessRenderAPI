@@ -11,6 +11,7 @@ from renderer.render import Board
 app = FastAPI(docs_url=None)
 app.mount("/data", StaticFiles(directory="/data"), name="data")
 
+
 @app.post("/render")
 async def render(data: RenderRequest, req: Request):
     if not compare_digest(req.headers.get("Authorization", ""), env["TOKEN"]):
@@ -23,4 +24,4 @@ async def render(data: RenderRequest, req: Request):
     name = data.fen.replace("/", "_") + ".png"
     url = "/data/" + b.render(name)
 
-    return {"status":"ok", "url":url}
+    return {"status": "ok", "url": url}

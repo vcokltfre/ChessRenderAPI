@@ -2,7 +2,9 @@ from PIL import Image
 from re import compile
 from pathlib import Path
 
-fenre = compile(r"^[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}$")
+fenre = compile(
+    r"^[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}/[rnbqkpRNBQKP1-8]{,8}$"
+)
 
 white = "PNBRQK"
 black = white.lower()
@@ -13,7 +15,7 @@ chars = {
     "b": "bishop",
     "q": "queen",
     "k": "king",
-    "p": "pawn"
+    "p": "pawn",
 }
 
 cache = set()
